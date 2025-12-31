@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.career-page-wrapper {
+  padding: 40px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Header Section */
+.career-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto 30px auto;
+}
+
+.career-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.career-header p {
+  color: #64748b;
+  margin: 4px 0 0 0;
+}
+
+.stat-pill {
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: 99px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* Table Card Design */
+.career-table-card {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.table-overflow {
+  overflow-x: auto;
+}
+
+.career-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.career-table th {
+  background: #fcfcfd;
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.career-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.career-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Candidate Column */
+.candidate-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.c-name {
+  display: block;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+.c-id {
+  font-size: 12px;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+/* Job Badge */
+.job-badge {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+/* Contact Details */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Date */
+.date-text {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Resume Button */
+.resume-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.resume-link:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.text-center { text-align: center; }
+.status-cell { text-align: center; padding: 60px; color: #94a3b8; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .career-page-wrapper { padding: 20px; }
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+.approve-btn {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}

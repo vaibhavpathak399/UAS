@@ -1,0 +1,104 @@
+:root {
+  --gov-blue: #0a3d62;
+  --border-soft: #e5e7eb;
+  --bg-soft: #f4f7f9;
+}
+
+.tender-enquiry-page {
+  font-family: "Inter", sans-serif;
+}
+
+/* HERO */
+.enquiry-hero {
+  background: linear-gradient(135deg, #0a3d62, #052a41);
+  color: white;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.hero-badge {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #93c5fd;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.enquiry-hero h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.enquiry-hero p {
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.95;
+}
+
+/* FORM */
+.enquiry-form-section {
+  background: var(--bg-soft);
+  padding: 70px 0;
+}
+
+.form-card {
+  background: white;
+  max-width: 650px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+}
+
+.form-card h2 {
+  margin-bottom: 25px;
+  color: var(--gov-blue);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* NOTE */
+.enquiry-note {
+  max-width: 650px;
+  margin: 20px auto 0;
+  font-size: 13px;
+  color: #475569;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

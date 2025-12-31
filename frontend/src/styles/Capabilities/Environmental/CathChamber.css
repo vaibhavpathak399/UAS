@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+  --primary: #0a3d62;
+  --accent: #f39c12;
+  --bg-soft: #f8fafc;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --white: #ffffff;
+}
+
+.cath-page {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+/* ================= HERO ================= */
+.cath-hero {
+  background: linear-gradient(135deg, #0a3d62 0%, #062c43 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  color: white;
+}
+
+.cath-hero h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.cath-hero p {
+  max-width: 800px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+/* ================= SECTIONS ================= */
+.cath-section {
+  padding: 60px 0;
+}
+
+.cath-section.light {
+  background: var(--bg-soft);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* FLEX */
+.cath-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.cath-image img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.cath-content h2 {
+  font-size: 26px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.cath-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cath-content li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.cath-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ================= TABLE ================= */
+.cath-table-wrapper {
+  overflow-x: auto;
+}
+
+.cath-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cath-table th,
+.cath-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+.cath-table th {
+  width: 45%;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.cath-table tr:last-child td,
+.cath-table tr:last-child th {
+  border-bottom: none;
+}
+
+/* NOTE */
+.cath-note {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .cath-flex {
+    flex-direction: column;
+  }
+
+  .cath-hero h1 {
+    font-size: 28px;
+  }
+}

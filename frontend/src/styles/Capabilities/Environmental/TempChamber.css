@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+  --primary: #0a3d62;
+  --accent: #f39c12;
+  --bg-soft: #f8fafc;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --white: #ffffff;
+}
+
+.temp-page {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+/* ================= HERO ================= */
+.temp-hero {
+  background: linear-gradient(135deg, #0a3d62 0%, #062c43 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  color: white;
+}
+
+.temp-hero h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.temp-hero p {
+  max-width: 820px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+/* ================= SECTIONS ================= */
+.temp-section {
+  padding: 60px 0;
+}
+
+.temp-section.light {
+  background: var(--bg-soft);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* FLEX */
+.temp-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.temp-image img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* CONTENT */
+.temp-content h2 {
+  font-size: 26px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.temp-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.temp-content li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.temp-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ================= TABLE ================= */
+.temp-table-wrapper {
+  overflow-x: auto;
+}
+
+.temp-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.temp-table th,
+.temp-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  font-size: 14px;
+}
+
+.temp-table th {
+  width: 45%;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.temp-table tr:last-child th,
+.temp-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* NOTE */
+.temp-note {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .temp-flex {
+    flex-direction: column;
+  }
+
+  .temp-hero h1 {
+    font-size: 28px;
+  }
+}

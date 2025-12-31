@@ -1,0 +1,61 @@
+const pool = require("../config/db");
+const transporter = require("../config/mail");
+
+exports.applyJob = async (req, res) => {
+  try {
+    const { jobTitle, candidateName, email, mobile } = req.body;
+
+    // 🔴 Resume must exist
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: "Resume file is required",
+      });
+    }
+
+    const resumePath = req.file.path; // server path
+    const originalName = req.file.originalname;
+
+    // 1️⃣ SAVE TO DATABASE
+    await pool.query(
+      `INSERT INTO career_applications
+       (job_title, candidate_name, email, mobile, resume_path)
+       VALUES ($1, $2, $3, $4, $5)`,
+      [jobTitle, candidateName, email, mobile, resumePath]
+    );
+
+    // 2️⃣ SEND EMAIL WITH RESUME ATTACHMENT
+    await transporter.sendMail({
+      from: `"UASTF Website" <${process.env.MAIL_USER}>`,
+      to: process.env.MAIL_USER,
+      subject: "New Job Application – UASTF",
+      text: `
+New job application received.
+
+Job Title: ${jobTitle}
+Candidate Name: ${candidateName}
+Email: ${email}
+Mobile: ${mobile}
+
+Resume is attached with this email.
+      `,
+      attachments: [
+        {
+          filename: originalName, // original resume name
+          path: resumePath,        // actual file path
+        },
+      ],
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Application submitted successfully",
+    });
+  } catch (error) {
+    console.error("❌ Careers apply error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to submit application",
+    });
+  }
+};

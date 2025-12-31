@@ -1,0 +1,119 @@
+/* ================= GOVERNMENT NAVBAR ================= */
+.gov-navbar {
+  background: #eaf1f7; /* soft gov blue */
+  border-bottom: 2px solid #0b4a6f;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 14px;
+}
+
+/* LEFT CONTACT */
+.gov-left span {
+  margin-right: 18px;
+  color: #0b1c2d;
+  font-weight: 500;
+}
+
+/* CENTER LINKS */
+.gov-center {
+  display: flex;
+  gap: 28px;
+  margin-left: center; 
+}
+
+.gov-center a {
+  text-decoration: none;
+  color: #0b1c2d;
+  font-weight: 600;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.gov-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #0b4a6f;
+  transition: 0.3s ease;
+}
+
+.gov-center a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT CTA */
+.gov-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gov-quote-btn {
+  background: #0b4a6f;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.gov-quote-btn:hover {
+  background: #083652;
+}
+
+/* CONTACT ITEMS ALIGNMENT FIX */
+/* LEFT CONTACT FIX */
+
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-item .icon {
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .gov-navbar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .gov-left,
+  .gov-right {
+    justify-content: center;
+  }
+
+  .gov-center {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .gov-navbar {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .gov-left {
+    justify-content: center;
+    font-size: 12.5px;
+    gap: 14px;
+  }
+}
+

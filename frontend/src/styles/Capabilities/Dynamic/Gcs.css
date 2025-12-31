@@ -1,0 +1,131 @@
+:root {
+  --navy: #0a3d62;
+  --border-grey: #e2e8f0;
+  --text-grey: #475569;
+}
+
+.gcs-clean-page {
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.gcs-simple-hero {
+  background-color: var(--navy);
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+}
+
+.simple-badge {
+  font-size: 12px;
+  background: rgba(255,255,255,0.15);
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.gcs-simple-hero h1 {
+  font-size: 36px;
+  margin: 15px 0;
+  font-weight: 700;
+}
+
+.gcs-simple-hero p {
+  max-width: 750px;
+  margin: 0 auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Content Rows */
+.content-row {
+  padding: 70px 0;
+}
+
+.bg-light {
+  background-color: #f8fafc;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.flex-box.reverse {
+  flex-direction: row-reverse;
+}
+
+.media-side, .text-side {
+  flex: 1;
+}
+
+.bordered-img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-grey);
+}
+
+.title-blue {
+  color: var(--navy);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.divider-left {
+  width: 40px;
+  height: 4px;
+  background: var(--navy);
+  margin-bottom: 25px;
+}
+
+.point-list {
+  list-style: none;
+  padding: 0;
+}
+
+.point-list li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  font-size: 15px;
+  color: var(--text-grey);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.point-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+/* Specific list for MGCS */
+.grid-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .flex-box, .flex-box.reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .divider-left { margin: 0 auto 25px; }
+  .point-list li { text-align: left; }
+  .content-row { padding: 40px 0; }
+  .gcs-simple-hero h1 { font-size: 28px; }
+}

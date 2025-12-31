@@ -1,0 +1,38 @@
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  font-size: 14px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: white;
+  color: rgb(0, 0, 0);
+  border: 1px solid #0b1c2d;
+  font-size: 20px;
+  align-items: center;
+  
+}
+
+.btn.secondary {
+  background: white;
+  color:  rgb(0, 0, 0);
+  border: 1px solid #0b1c2d;
+  font-size: 20px;
+  align-items: center;
+}
+
+.btn.outline {
+  border: 1px solid #0b1c2d;
+  color: #0b1c2d;
+  background: transparent;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0b1c2d;
+  font-weight: 500;
+  text-decoration: none;
+}

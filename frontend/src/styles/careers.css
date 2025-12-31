@@ -1,0 +1,162 @@
+:root {
+  --navy-gov: #0a3d62;
+  --sky-blue: #3498db;
+  --bg-soft-gray: #f4f7f9;
+  --border-light: #e5e7eb;
+}
+
+.careers-main-container {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+}
+
+.container {
+  max-width: 1000px; /* Wide but contained */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- HERO --- */
+.careers-hero-gov {
+  background: linear-gradient(135deg, #0a3d62 0%, #062c43 100%);
+  padding: 58px 0 30px;
+  text-align: center;
+  color:rgb(245, 239, 239);
+}
+
+.hero-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--sky-blue);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.careers-hero-gov h1 {
+  font-size: 36px;
+  margin: 0 0 15px;
+}
+
+/* --- JOB CARDS (WIDE & CLEAN) --- */
+.jobs-list-section {
+  padding: 60px 0;
+  background: var(--bg-soft-gray);
+}
+
+.job-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Spacing between boxes */
+}
+
+.wide-job-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 30px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wide-job-card:hover {
+  border-color: var(--navy-gov);
+  box-shadow: 0 10px 25px rgba(10, 61, 98, 0.08);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.title-group h3 {
+  font-size: 22px;
+  color: var(--navy-gov);
+  margin: 0 0 8px;
+}
+
+.job-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.sep { color: #cbd5e1; }
+
+.dept-txt {
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* --- BODY & BUTTON --- */
+.card-body p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.view-details-btn {
+  background: var(--navy-gov);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.view-details-btn:hover {
+  background: #082d49;
+}
+
+/* --- BOTTOM CTA (PHLE JAISA STYLE) --- */
+.careers-bottom-cta {
+  background: #edf2f7;
+  padding: 65px 20px;
+  text-align: center;
+}
+
+.careers-bottom-cta h2 {
+  font-size: 26px;
+  color: var(--navy-gov);
+  margin-bottom: 10px;
+}
+
+.careers-bottom-cta p {
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+.resume-submit-btn {
+  background: transparent;
+  color: var(--navy-gov);
+  border: 2px solid var(--navy-gov);
+  padding: 12px 30px;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.resume-submit-btn:hover {
+  background: var(--navy-gov);
+  color: white;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 850px) {
+  .card-top { flex-direction: column; gap: 20px; }
+  .view-details-btn { width: 100%; }
+}

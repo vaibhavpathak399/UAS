@@ -1,0 +1,160 @@
+:root {
+  --navy: #0a3d62;
+  --accent: #3c6382;
+  --danger: #d63031;
+  --danger-light: #fff5f5;
+  --border: #e2e8f0;
+  --bg-admin: #f8fafc;
+}
+
+.admin-tenders-page {
+  background-color: var(--bg-admin);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Header Styles --- */
+.admin-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-text h1 {
+  font-size: 32px;
+  color: var(--navy);
+  font-weight: 800;
+  margin: 0;
+}
+
+.header-text p {
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.stat-badge {
+  background: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- Card & Table Styles --- */
+.tender-card-wrapper {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.modern-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.modern-admin-table th {
+  background: #fdfdfd;
+  padding: 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #475569;
+  border-bottom: 2px solid var(--border);
+}
+
+.modern-admin-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14.5px;
+  color: #1e293b;
+}
+
+.modern-admin-table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* --- Specialized Columns --- */
+.id-col { color: #94a3b8; font-weight: 600; }
+.title-col strong { color: var(--navy); }
+
+.deadline-chip {
+  background: #f1f5f9;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.view-pdf-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed var(--accent);
+}
+
+.view-pdf-link:hover {
+  color: var(--navy);
+  border-bottom-style: solid;
+}
+
+/* --- Buttons --- */
+.text-right { text-align: right; }
+
+.action-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.delete-btn {
+  background-color: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid #ffeded;
+}
+
+.delete-btn:hover {
+  background-color: var(--danger);
+  color: white;
+  box-shadow: 0 4px 12px rgba(214, 48, 49, 0.25);
+}
+
+/* --- Empty State --- */
+.no-data-cell {
+  padding: 100px 0 !important;
+  text-align: center;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #94a3b8;
+}
+
+.empty-state .icon { font-size: 40px; margin-bottom: 10px; }
+
+/* Responsive Mobile Support */
+@media (max-width: 768px) {
+  .admin-main-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+  .modern-admin-table th:nth-child(1), .modern-admin-table td:nth-child(1) { display: none; }
+}

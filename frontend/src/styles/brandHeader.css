@@ -1,0 +1,92 @@
+.brand-header {
+  width: 100%;
+  background: #02466d; /* defence blue */
+  color: #e6f2fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* IMPORTANT: remove side gaps */
+  padding: 0% ;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* LEFT & RIGHT LOGO BLOCK */
+.brand-logo {
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BIG LOGO – NO PADDING */
+.brand-logo img {
+  width: 160px;          /* ⬅️ INCREASED SIZE */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CENTER TEXT */
+.brand-center {
+  width: 56%;
+  text-align: center;
+  padding: 0 10px;
+  font-family: 'Times New Roman', Times, serif
+}
+
+.brand-center h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.brand-center p {
+  margin-top: 6px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.brand-header {
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .brand-logo img {
+    width: 120px;
+  }
+
+  .brand-center h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .brand-logo {
+    width: auto;
+  }
+
+  .brand-center {
+    width: 100%;
+  }
+
+  .brand-center h1 {
+    font-size: 24px;
+  }
+
+  /* OPTIONAL: hide right logo on mobile */
+  .brand-logo:last-child {
+    display: none;
+  }
+}
