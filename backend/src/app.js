@@ -1,10 +1,12 @@
 const express = require("express");
+app.set("trust proxy", 1);
 const cors = require("cors");
 const path = require("path");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
 const pool = require("./config/db");
+
 
 /* ROUTES */
 const quotationRoutes = require("./routes/quotation.routes");
