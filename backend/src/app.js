@@ -1,5 +1,5 @@
 const express = require("express");
-app.set("trust proxy", 1);
+
 const cors = require("cors");
 const path = require("path");
 const helmet = require("helmet");
@@ -18,6 +18,7 @@ const tenderEnquiryRoutes = require("./routes/tenderEnquiry.routes");
 const jobRoutes = require("./routes/job.routes");
 
 const app = express();
+app.set("trust proxy", 1);
 
 /* =======================
    SECURITY MIDDLEWARE
