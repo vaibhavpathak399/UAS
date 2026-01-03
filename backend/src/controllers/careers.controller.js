@@ -26,7 +26,7 @@ exports.applyJob = async (req, res) => {
 
     // 2️⃣ SEND EMAIL WITH RESUME ATTACHMENT
  await sendMail({
-  to: process.env.MAIL_USER,
+  to: process.env.ADMIN_EMAIL,
   subject: "New Job Application – UAS-TF",
   html: `
     <h3>New Job Application</h3>

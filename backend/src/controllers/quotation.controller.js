@@ -30,7 +30,7 @@ exports.createQuotation = async (req, res) => {
 
     /* 2️⃣ SEND EMAIL */
 await sendMail({
-  to: process.env.MAIL_USER,
+  to: process.env.ADMIN_EMAIL,
   subject: "New Quotation Request Received – UAS-TF",
   html: `
     <h3>New Quotation Request</h3>

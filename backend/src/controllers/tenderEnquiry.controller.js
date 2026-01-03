@@ -21,7 +21,7 @@ exports.submitTenderEnquiry = async (req, res) => {
     );
 
 await sendMail({
-  to: process.env.MAIL_USER,
+  to: process.env.ADMIN_EMAIL,
   subject: "New Tender Enquiry – UAS-TF",
   html: `
     <h3>New Tender Enquiry</h3>
