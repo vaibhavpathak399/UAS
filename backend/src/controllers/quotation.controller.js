@@ -1,5 +1,5 @@
 const pool = require("../config/db");
-const transporter = require("../config/mail");
+const sendMail = require("../config/mail");
 
 exports.createQuotation = async (req, res) => {
   const {
@@ -29,21 +29,20 @@ exports.createQuotation = async (req, res) => {
     ]);
 
     /* 2️⃣ SEND EMAIL */
-    await transporter.sendMail({
-      from: `"UASTF Website" <${process.env.MAIL_USER}>`,
-      to: process.env.MAIL_USER,
-      subject: "New Quotation Request Received – UASTF",
-      text: `
-A new quotation request has been received.
+await sendMail({
+  to: process.env.MAIL_USER,
+  subject: "New Quotation Request Received – UAS-TF",
+  html: `
+    <h3>New Quotation Request</h3>
+    <p><b>Company:</b> ${company}</p>
+    <p><b>Contact Person:</b> ${contactPerson}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Mobile:</b> ${mobile}</p>
+    <p><b>Testing Category:</b> ${testingCategory}</p>
+    <p><b>Description:</b><br/>${description}</p>
+  `,
+});
 
-Company: ${company}
-Contact Person: ${contactPerson}
-Email: ${email}
-Mobile: ${mobile}
-Testing Category: ${testingCategory}
-Description: ${description}
-      `,
-    });
 
     res.status(200).json({
       success: true,

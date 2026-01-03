@@ -1,5 +1,5 @@
 const pool = require("../config/db");
-const transporter = require("../config/mail");
+const sendMail = require("../config/mail");
 
 exports.submitTenderEnquiry = async (req, res) => {
   try {
@@ -20,23 +20,20 @@ exports.submitTenderEnquiry = async (req, res) => {
       [tenderId, companyName, contactPerson, email, mobile, message]
     );
 
-    await transporter.sendMail({
-      from: `"UASTF Website" <${process.env.MAIL_USER}>`,
-      to: process.env.MAIL_USER,
-      subject: "New Tender Enquiry – UASTF",
-      text: `
-New tender enquiry received.
+await sendMail({
+  to: process.env.MAIL_USER,
+  subject: "New Tender Enquiry – UAS-TF",
+  html: `
+    <h3>New Tender Enquiry</h3>
+    <p><b>Tender ID:</b> ${tenderId}</p>
+    <p><b>Company:</b> ${companyName}</p>
+    <p><b>Contact:</b> ${contactPerson}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Mobile:</b> ${mobile}</p>
+    <p><b>Message:</b><br/>${message}</p>
+  `,
+});
 
-Tender ID: ${tenderId}
-Company: ${companyName}
-Contact: ${contactPerson}
-Email: ${email}
-Mobile: ${mobile}
-
-Message:
-${message}
-      `,
-    });
 
     res.json({ success: true, message: "Enquiry submitted successfully" });
   } catch (err) {

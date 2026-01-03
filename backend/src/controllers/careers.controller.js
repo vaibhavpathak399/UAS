@@ -1,5 +1,5 @@
 const pool = require("../config/db");
-const transporter = require("../config/mail");
+const sendMail = require("../config/mail");
 
 exports.applyJob = async (req, res) => {
   try {
@@ -25,27 +25,20 @@ exports.applyJob = async (req, res) => {
     );
 
     // 2️⃣ SEND EMAIL WITH RESUME ATTACHMENT
-    await transporter.sendMail({
-      from: `"UASTF Website" <${process.env.MAIL_USER}>`,
-      to: process.env.MAIL_USER,
-      subject: "New Job Application – UASTF",
-      text: `
-New job application received.
+ await sendMail({
+  to: process.env.MAIL_USER,
+  subject: "New Job Application – UAS-TF",
+  html: `
+    <h3>New Job Application</h3>
+    <p><b>Job Title:</b> ${jobTitle}</p>
+    <p><b>Candidate Name:</b> ${candidateName}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Mobile:</b> ${mobile}</p>
+    <p>Resume uploaded successfully on server.</p>
+  `,
+});
+    // 3️⃣ RESPONSE
 
-Job Title: ${jobTitle}
-Candidate Name: ${candidateName}
-Email: ${email}
-Mobile: ${mobile}
-
-Resume is attached with this email.
-      `,
-      attachments: [
-        {
-          filename: originalName, // original resume name
-          path: resumePath,        // actual file path
-        },
-      ],
-    });
 
     res.status(200).json({
       success: true,
