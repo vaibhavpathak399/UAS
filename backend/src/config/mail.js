@@ -5,7 +5,7 @@ client.authentications["api-key"].apiKey = process.env.BREVO_API_KEY;
 
 const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
-async function sendMail({ to, subject, html }) {
+async function sendMail({ to, subject, html, attachments = [] }) {
   return apiInstance.sendTransacEmail({
     sender: {
       email: process.env.MAIL_FROM,
@@ -14,6 +14,7 @@ async function sendMail({ to, subject, html }) {
     to: [{ email: to }],
     subject,
     htmlContent: html,
+    attachment: attachments,
   });
 }
 
