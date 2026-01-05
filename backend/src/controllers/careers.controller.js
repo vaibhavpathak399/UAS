@@ -1,11 +1,11 @@
 const fs = require("fs");
+const pool = require("../config/db");
 const sendMail = require("../config/mail");
 
 exports.applyJob = async (req, res) => {
   try {
     const { jobTitle, candidateName, email, mobile } = req.body;
 
-    // 🔴 Resume must exist
     if (!req.file) {
       return res.status(400).json({
         success: false,
@@ -16,28 +16,36 @@ exports.applyJob = async (req, res) => {
     // 🔹 Read resume file
     const fileBuffer = fs.readFileSync(req.file.path);
     const base64Resume = fileBuffer.toString("base64");
+    const fileName = req.file.originalname;
 
-    // 🔹 Send email with resume attachment
+    // 1️⃣ SAVE APPLICATION TO DATABASE (VERY IMPORTANT)
+    await pool.query(
+      `INSERT INTO career_applications
+       (job_title, candidate_name, email, mobile)
+       VALUES ($1, $2, $3, $4)`,
+      [jobTitle, candidateName, email, mobile]
+    );
+
+    // 2️⃣ SEND EMAIL WITH RESUME ATTACHMENT
     await sendMail({
       to: process.env.ADMIN_EMAIL,
-      subject: "New Job Application – UAS-TF",
+      subject: "New Job Application – UAS Testing Foundation",
       html: `
         <h3>New Job Application</h3>
         <p><b>Job Title:</b> ${jobTitle}</p>
         <p><b>Candidate Name:</b> ${candidateName}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Mobile:</b> ${mobile}</p>
-        <p>Resume attached.</p>
       `,
       attachments: [
         {
           content: base64Resume,
-          name: req.file.originalname,
+          name: fileName,
         },
       ],
     });
 
-    // 🔴 IMPORTANT: delete local file after email
+    // 3️⃣ DELETE LOCAL FILE (Render safe)
     fs.unlinkSync(req.file.path);
 
     return res.status(200).json({
